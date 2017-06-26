@@ -6,7 +6,9 @@
 package com.gen.projectgen.model;
 
 import com.gen.projectgen.metier.WordServiceLocal;
+import com.gen.projectgen.persistance.Word;
 import java.io.Serializable;
+import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -22,7 +24,8 @@ import javax.servlet.http.HttpSession;
 public class wordBean implements Serializable{
     
     private String word;
-    
+    private List<Word> words;
+
     @Inject
     private WordServiceLocal wordService;
 
@@ -30,7 +33,7 @@ public class wordBean implements Serializable{
     /**
      * Creates a new instance of wordBean
      */
-    public wordBean() {
+    public void init() {
     }
     
     public String createMot(){
@@ -41,12 +44,18 @@ public class wordBean implements Serializable{
         return "index"; 
     }
     
-    public String findMots(){
-        wordService.findWords(word);
+    public void findMots(){
+        words = wordService.findWords(word);
+        for (Word w: words) System.out.println(w.getWord()); 
+        System.out.println(words.size()); 
         HttpSession session = (HttpSession)
         FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         session.invalidate();
-        return "index"; 
+    }
+    
+    public String redirectToRslt(){
+        System.out.println("On navigue vers les resultats");
+        return "rslt";
     }
 
     
@@ -56,6 +65,14 @@ public class wordBean implements Serializable{
 
     public String getWord() {
         return word;
+    }
+    
+    public void setWords(List<Word> words) {
+        this.words = words;
+    }
+
+    public List<Word> getWords() {
+        return words;
     }
     
 }

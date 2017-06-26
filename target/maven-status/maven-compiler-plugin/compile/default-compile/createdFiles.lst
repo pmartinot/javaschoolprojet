@@ -1,6 +1,8 @@
 com/gen/projectgen/integration/WordDAO.class
+com/gen/projectgen/rest/VerifRessource.class
 com/gen/projectgen/persistance/Word_.class
 com/gen/projectgen/metier/WordService.class
 com/gen/projectgen/metier/WordServiceLocal.class
+com/gen/projectgen/rest/ApplicationConfig.class
 com/gen/projectgen/model/wordBean.class
 com/gen/projectgen/persistance/Word.class

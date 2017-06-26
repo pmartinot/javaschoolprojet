@@ -7,6 +7,7 @@ package com.gen.projectgen.metier;
 
 import com.gen.projectgen.integration.WordDAO;
 import com.gen.projectgen.persistance.Word;
+import java.util.List;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import javax.inject.Inject;
@@ -31,8 +32,9 @@ public class WordService implements WordServiceLocal {
     }
 
     @Override
-    public void findWords(String pattern) {
+    public List<Word> findWords(String pattern) {
         System.out.println("pattern" + pattern);
+        return wordDAO.findByCriteria(pattern);   
     }
 
     @Override

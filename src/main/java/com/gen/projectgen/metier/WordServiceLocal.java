@@ -5,6 +5,8 @@
  */
 package com.gen.projectgen.metier;
 
+import com.gen.projectgen.persistance.Word;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -16,7 +18,7 @@ public interface WordServiceLocal {
     
     public void addWord(String word);
     
-    public void findWords(String pattern);
+    public List<Word> findWords(String pattern);
     
     public void save(); 
     
