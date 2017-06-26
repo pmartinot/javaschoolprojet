@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>GenProject</title>
+    </h:head>
+    <h:body>
+    <h:form>
+        Mot : <h:inputText id="mot" value="#{wordBean.word}" />
+        <br/>
+        <h:commandButton id="add" value="Ajouter" action="#{wordBean.createMot}" />
+        <h:commandButton id="search" value="Rechercher" action="#{wordBean.findMots}" />
+    </h:form>
+    </h:body>
+</html>
