@@ -36,6 +36,7 @@ public class WordService implements WordServiceLocal {
     @Inject
     WordDAO wordDAO;
     
+    
     @Inject //paquetage javax.inject
     private JMSContext context; //paquetage javax.jms
 
@@ -65,12 +66,13 @@ public class WordService implements WordServiceLocal {
     }
     
     
+    
+    
     private void sendVerif(Verif verif){
         //utilisation de l'API JAX-B de gestion de flux pour marshaller (transformer) l'objet
        //Payment en chaine XML
         JAXBContext jaxbContext;
         try {
-        //obtention d'une instance JAXBContext associée au type Payment annoté avec JAX-B
         jaxbContext = JAXBContext.newInstance(Verif.class);
         //création d'un Marshaller pour transfomer l'objet Java en flux XML
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -95,5 +97,6 @@ public class WordService implements WordServiceLocal {
             System.out.println("Oulah un erreur");
         }
     }
+
 
 }
