@@ -2,13 +2,13 @@
 
 ### projectGen ###
 
--Web page to manage dictionnary
--JSF
--JPA
--REST
+- Web page to manage dictionnary
+- JSF
+- JPA
+- REST
 
 ### verifGen ###
 
--JMS
--Check for french words
--Send HTTP request
+- JMS
+- Check for french words
+- Send HTTP request
