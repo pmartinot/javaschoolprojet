@@ -1,0 +1,9 @@
+com/verif/database/persistence/Mot.class
+com/verif/projectgen/service/WordServiceLocal.class
+com/cesi/presentation/model/WordBean.class
+com/verif/projectgen/service/WordService.class
+com/verif/database/persistence/Mot_.class
+com/verif/projectgen/ApplicationConfig.class
+com/verif/projectgen/VerifResource.class
+com/verif/projectgen/model/MotBean.class
+com/verif/database/dbmanager/DicoManager.class
