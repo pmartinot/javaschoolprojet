@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 /**
  *
- * @author cesi
+ * @author pierre
  */
 @Stateless
 public class WordDAO {
