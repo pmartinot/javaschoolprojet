@@ -49,8 +49,8 @@ public class WordService implements WordServiceLocal {
         wordORM.setWord(word);
         Verif test = new Verif();
         test.setDecryptedData("aaaa");
-        sendVerif(test);
-        //save();
+        //sendVerif(test);
+        save();
     }
 
     @Override

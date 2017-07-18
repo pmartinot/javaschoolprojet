@@ -74,18 +74,21 @@ public class VerifRessource {
         String restMsg="";
         Verif verif = new Verif();
         StringReader reader = new StringReader(message);
+        restMsg="{\"content\":\"JMS prend bien le relais\"}";
+        
 
         //on essaye de transformer le string du corps du message en JsonObject
         try (JsonReader jreader = Json.createReader(reader)) {
+            System.out.println("Je recois un message dans REST");
             JsonObject jo = jreader.readObject();
             //on set l'objet verif à envoyer
             verif.setDecryptedData(jo.getString("text"));
             verif.setFileName(jo.getString("file"));
             verif.setKey(jo.getString("key"));
             sendVerif(verif);
-            restMsg="{\"content\":\"JMS a bien pris le relais\"}";
+
         }catch(Exception e){
-            System.out.println(e);
+           System.out.println(e);
             restMsg="{\"content\":\"Erreur lors du traitement du message\"}";
         }       
       return restMsg;
